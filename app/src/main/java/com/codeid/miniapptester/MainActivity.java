@@ -14,6 +14,8 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.codeid.miniapptester.databinding.ActivityMainBinding;
+import com.tencent.tmf.mini.api.TmfMiniSDK;
+import com.tencent.tmf.mini.api.bean.MiniStartOptions;
 
 import android.view.Menu;
 import android.view.MenuItem;
@@ -39,11 +41,15 @@ public class MainActivity extends AppCompatActivity {
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAnchorView(R.id.fab)
-                        .setAction("Action", null).show();
+                launchMiniApp();
             }
         });
+    }
+
+    private void launchMiniApp() {
+        String appId = "mp4kazz34av9riuw"; // Replace with actual Mini App ID
+
+        TmfMiniSDK.startMiniApp(this, appId, null);
     }
 
     @Override

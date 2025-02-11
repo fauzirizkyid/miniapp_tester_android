@@ -9,6 +9,10 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
+
+        maven {
+            url 'https://tcmpp-work-maven.pkg.coding.net/repository/tcmpp/android'
+        }
     }
 }
 dependencyResolutionManagement {
@@ -16,6 +20,11 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+        maven { url = uri("https://maven.pkg.jetbrains.space/kotlin/p/kotlinx/maven") } // Kotlin official repo
+        maven {
+            url 'https://tcmpp-work-maven.pkg.coding.net/repository/tcmpp/android'
+        }
     }
 }
 

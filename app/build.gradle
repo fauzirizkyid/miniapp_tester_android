@@ -1,15 +1,18 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.kapt)
 }
 
 android {
     namespace 'com.codeid.miniapptester'
-    compileSdk 34
+    compileSdk = 35  // Updated from 34 to 35 ✅
 
     defaultConfig {
         applicationId "com.codeid.miniapptester"
         minSdk 24
-        targetSdk 34
+        //noinspection EditedTargetSdkVersion
+        targetSdk 35
         versionCode 1
         versionName "1.0"
 
@@ -23,11 +26,25 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_17  // ✅ Match Java 17
+        targetCompatibility JavaVersion.VERSION_17
     }
+
+    kotlinOptions {
+        jvmTarget = "17"  // ✅ Ensure Kotlin matches Java 17
+    }
+
     buildFeatures {
         viewBinding true
+    }
+    packagingOptions {
+        pickFirst 'lib/arm64-v8a/libc++_shared.so'
+        pickFirst 'lib/armeabi/libc++_shared.so'
+        pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+        pickFirst 'lib/arm64-v8a/libmarsxlog.so'
+        pickFirst 'lib/armeabi/libmarsxlog.so'
+        pickFirst 'lib/armeabi-v7a/libmarsxlog.so'
+        pickFirst 'lib/arm64-v8a/libv8jni.so'
     }
 }
 
@@ -41,4 +58,15 @@ dependencies {
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
+
+    implementation libs.material.v130alpha03
+    implementation libs.core.ktx
+
+    implementation libs.gson
+    implementation libs.okhttp
+
+    // mini app start
+    kapt libs.mini.annotation.processor // For version information, see Android SDK Updates
+    implementation libs.mini.core // For version information, see Android SDK Updates
+    // mini app end
 }
