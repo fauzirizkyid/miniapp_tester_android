@@ -43,4 +43,12 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+
+    <string name="mini_sdk_more_item_wechat_friend_home_0">Share to WeChat Moments</string>
+    <string name="mini_sdk_more_item_qq_0">Share to QQ</string>
+    <string name="mini_sdk_more_item_qq_zone_0">Share to Qzone</string>
+    <string name="mini_sdk_more_item_wechat_friend_0">Share to WeChat Friends</string>
+    <string name="mini_sdk_more_item_debug_0">Share to WeChat Friends</string>
+    <string name="mini_sdk_more_item_perfomance_0">Share to WeChat Friends</string>
+    <string name="mini_sdk_more_item_setting_0">Share to WeChat Friends</string>
 </resources>
