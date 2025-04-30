@@ -42,7 +42,8 @@ class MainActivity : AppCompatActivity() {
 //            val options = MiniStartOptions()
 //            options.resultReceiver = mResultReceiver
 //            options.entryPath = "tcmppgt1hj2nijw://applet/?appId=mpun6khtfydezrka"
-            TmfMiniSDK.scan(this)
+            TmfMiniSDK.startMiniAppByScan(this)
+//            TmfMiniSDK.scan(this)
 //            TmfMiniSDK.startMiniApp(
 //                this,
 //                "mpun6khtfydezrka",
@@ -52,6 +53,7 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
 
     override fun onActivityResult(
         requestCode: Int,
