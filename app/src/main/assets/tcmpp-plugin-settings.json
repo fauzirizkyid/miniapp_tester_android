@@ -1,0 +1,21 @@
+{
+    "android": {
+        "configAssetsName": "tcmpp-android-configurations.json",
+        "debug": true,
+        "enableX5Core": false,
+        "x5LicenseKey": "",
+        "x5DocLicenseKey": "",
+        "x5Core32Url": "",
+        "x5Core64Url": ""
+    },
+    "ios": {
+        "configAssetsName": "tcmpp-ios-configurations.json",
+        "debug": true,
+        "logEnable": true,
+        "inspectableEnabled": true
+    },
+    "common": {
+        "appName": "CODEID MiniApp",
+        "appVersion": "0.1.1"
+    }
+}
